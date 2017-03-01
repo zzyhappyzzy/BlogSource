@@ -23,3 +23,12 @@ categories: Apple
 * [`Stackoverflow`](http://stackoverflow.com/)
 * [`Github`](https://github.com/)
 * [`Codefights`](https://codefights.com/)
+* [`Medium`](https://medium.com/)
+* [`Ry's Cocoa Tutorial`](http://rypress.com/tutorials/objective-c/index/)
+* [`Stanford iTunes video`](https://itunes.apple.com/us/course/developing-ios-8-apps-swift/id961180099/)
+* [`NSScreencast`](http://nsscreencast.com/episodes/)
+* [`Use Your Loaf`](https://useyourloaf.com/)
+
+说明
+===
+>欢迎各路大神评论，持续更新中。。。
