@@ -34,5 +34,15 @@ sudo n stable
 `n list`可以查看所有的node版本  
 `n`可以查看已安装的node版本
 ## 卸载
-HomeBrew安装的`brew uninstall node`  
-n安装的`sudo n rm version`
+* HomeBrew安装的`brew uninstall node`  
+* n安装的`sudo n rm version`
+* shell脚本卸载
+```shell
+lsbom -f -l -s -pf /var/db/receipts/org.nodejs.pkg.bom \
+| while read i; do
+  sudo rm /usr/local/${i}
+done
+sudo rm -rf /usr/local/lib/node \
+     /usr/local/lib/node_modules \
+     /var/db/receipts/org.nodejs.*
+```
