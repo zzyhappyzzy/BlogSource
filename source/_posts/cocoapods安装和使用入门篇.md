@@ -20,7 +20,8 @@ gem sources --add https://ruby.taobao.org/
 
 https://ruby.taobao.org/
 ```
-最好顺便更新下gem，输入命令`sudo gem update --system`即可。（`可选`）
+顺便更新下gem，输入命令`sudo gem update --system`即可。（`需升级`）
+>最近升级cocoapods到1.2.0出了点问题，就是由于gem版本太低导致的，所以尽量保持gem也是最新版本。
 
 #### 二、安装cocoapods
 * 安装最新版本`sudo gem install -n /usr/local/bin cocoapods`
