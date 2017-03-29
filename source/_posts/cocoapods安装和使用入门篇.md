@@ -8,18 +8,27 @@ categories: 学习笔记
 cocoapods是Xcode管理第三方类库的工具（当然也可以管理自己封装的私有库），能够处理类库之间的依赖关系，方便多个类库的升级和管理。它是用ruby语言编写的。
 <!-- more -->
 
-#### 一、更换ruby源(ruby官方源很可能被墙了)
-打开命令行窗口terminal，依次输入下面的命令
+#### 一、更换ruby源
+打开命令行工具terminal，依次输入下面的命令
+>ruby官方源`https://rubygems.org/`很可能被墙了
+>淘宝的ruby源~~https://ruby.taobao.org/~~已停更，建议使用最新的ruby-china源**http://gems.ruby-china.org/**
+
 ```
 gem sources --remove https://rubygems.org/
-gem sources --add https://ruby.taobao.org/
+gem sources --add http://gems.ruby-china.org/
 ```
+
 接着输入`gem sources -l`即可看到如下结果
+
 ```
 *** CURRENT SOURCES ***
 
-https://ruby.taobao.org/
+http://gems.ruby-china.org/
 ```
+
+>如果想用ruby-china的https源*https://gems.ruby-china.org/*，需要给gem配置证书,具体参考[github-ruby-ssl](https://github.com/ruby-china/rubygems-mirror/issues/5)
+
+
 顺便更新下gem，输入命令`sudo gem update --system`即可。（`需升级`）
 >最近升级cocoapods到1.2.0出了点问题，就是由于gem版本太低导致的，所以尽量保持gem也是最新版本。
 
@@ -98,3 +107,6 @@ update命令若不指定podName则更新所有有新版本的库`pod update [pod
 输入命令`sudo gem uninstall cocoapods`即可卸载cocoapods    
 
 >每次执行`pod install`后，Podfile.lock都会更新。如果团队使用git/svn之类的版本管理工具，必须将Podfile.lock纳入版本管理。否则，团队中不同的人看到的cocoapods管理的第三方库版本可能不一致，甚至报错。
+
+#### 九、gem安装其它库的写权限问题
+`gem install` 时加入参数 `-n /usr/local/bin` 指定安装目录即可。(eg：`sudo gem install -n /usr/local/bin cocoapods`)
