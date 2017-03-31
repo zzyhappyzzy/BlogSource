@@ -1,6 +1,6 @@
-#Description
+# Description
 My personal blog's source files.
-#How to Use
+# How to Use
 * get hexo next theme source code
 
 ```
@@ -11,7 +11,7 @@ git submodule update --init --recursive
 ```
 npm install
 ```
-#Preview
+# Preview
 ```
 hexo g
 hexo s
