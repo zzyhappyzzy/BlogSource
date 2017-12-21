@@ -7,7 +7,7 @@ categories: 自动化
 
 说明
 ---
-Jenkins很强大，本文主要记录Jenkins用于IOS自动打包。
+Jenkins很强大，本文主要记录Jenkins用于iOS自动打包。
 <!-- more -->
 步骤
 ---
@@ -143,7 +143,7 @@ mv ${BUILD_APP_DIR}/*.dSYM ${OUT_IPA_DIR}/${DSYM_NAME}
 
 升级
 ---
-前段时间将XCode升级到8.3之后，发现之前那的打包脚本被弃用了，顺便更新了下脚本，思路不变，使用export命令生成ipa文件。
+前段时间将XCode升级到8.3之后，发现之前那的打包脚本被弃用了，顺便更新下脚本，思路不变，使用export命令生成ipa文件。
 使用export命令之前，需要在工程目录添加plist文件，描述打包等相关信息。给个appstore包的plist文件例子。
 
 ```
@@ -157,6 +157,25 @@ mv ${BUILD_APP_DIR}/*.dSYM ${OUT_IPA_DIR}/${DSYM_NAME}
 </plist>
 ```
 inHouse证书的例子，只是将method的value改为enterprise即可。还有其他的值：ad-hoc，development等。上面的plist文件还可以添加其他的键值对，但用默认值即可。
+
+>Xcode9.0后，archive需要指明描述文件，也就是上面的plist文件需要新增provisioningProfiles键值对。
+>`需要将provisioningProfiles值的yourAppBundleId和对应的yourAppProvisioningProfileName改为你app的值`
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>method</key>
+    <string>enterprise</string>
+    <key>provisioningProfiles</key>
+    <dict>
+      <key>yourAppBundleId</key>
+      <string>yourAppProvisioningProfileName</string>
+    </dict>
+</dict>
+</plist>
+```
 
 升级后的打包核心脚本，其中packageRelease.plist的内容与上面的例子类似
 
@@ -191,7 +210,7 @@ EXPORT_PATH="${PRO_DIR}/exportPath"
 
 xcodebuild clean -workspace ${WORKSPACE_DIR} -scheme "${SCHEME}" -configuration "${CONFIGURATION_INHOUSE}" -archivePath "${ARCHIVE_PATH}"
 xcodebuild -workspace ${WORKSPACE_DIR} -scheme "${SCHEME}" -configuration "${CONFIGURATION_INHOUSE}" -archivePath "${ARCHIVE_PATH}" archive
-xcodebuild -exportArchive -archivePath "${ARCHIVE_PATH}" -exportOptionsPlist  "${PRO_DIR}/packageInnerRelease.plist" -exportPath "${EXPORT_PATH}"
+xcodebuild -exportArchive -archivePath "${ARCHIVE_PATH}" -exportOptionsPlist  "${PRO_DIR}/packageRelease.plist" -exportPath "${EXPORT_PATH}"
 ```
 
 第三方
