@@ -85,6 +85,7 @@ git clone [sshUrl]
 ===
 这里说的单个ssh key是指一台git服务器只有一个git账号。也就是说，如果你不仅在github有账号，在coding也有账号，甚至团队内部自己搭建了私有的git服务器等，这些服务器都可以公用同一个ssh key的，绝对没有必要创建多个ssh key。你只需要将相同的ssh公钥添加到相应的服务器的账号设置里即可。如果自己不能添加，可以将公钥发给服务器管理人员，让他帮忙添加也行。
 >ssh key不仅仅用于git服务器，它还支持远程加密登录和相应的操作。比如，登录云服务器，添加ssh key后，可以免密登录
+>免密登陆的ssh key存放在文件`.ssh/authorized_keys`里,如果.ssh目录下没有authorized_keys文件可以自己创建该文件，多个授权的ssh key换行即可
 
 多个SSH key配置
 ===
@@ -120,7 +121,7 @@ Host [shortName]
 `domain` 对应的服务器域名(IP)
 
 `private keyPath` 私钥绝对路径
- 
+
 `user` 用户名。**服务器的用户名**，不是你的用户名。eg：大部分的git服务器用户名都为git
 
 `port` 端口号，默认为22
@@ -182,10 +183,3 @@ Host coding2
 ```
 
 嗯，大概就这些吧。That's All ~
-
-
-
-
-
-
-

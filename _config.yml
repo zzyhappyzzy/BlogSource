@@ -94,5 +94,5 @@ deploy:
   type: git
   repo:
     github: "https://github.com/zzyhappyzzy/zzyhappyzzy.github.io.git"
-    coding: "https://git.coding.net/zzyhappyzzy/zzyhappyzzy.git"
+    # coding: "https://git.coding.net/zzyhappyzzy/zzyhappyzzy.git"
   branch: master
