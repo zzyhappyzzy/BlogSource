@@ -7,7 +7,7 @@ title: zyoung的小窝
 subtitle: 人人为我，我为人人
 description: 个人技术博客，平常写写文章、吐吐槽
 author: Zhen ZhaoYang
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -42,6 +42,13 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+  
+leancloud_counter_security:
+  enable_sync: true
+  app_id: JJTvMcz1cuKgXUytD4wdFjpN-gzGzoHsz
+  app_key: ayKqpYreoW4mOQK4IrpRS8rP
+  username: zzy
+  password:
 
 # Category & Tag
 default_category: uncategorized
@@ -91,7 +98,8 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: leancloud_counter_security_sync
+- type: git
   repo:
     github: "https://github.com/zzyhappyzzy/zzyhappyzzy.github.io.git"
     # coding: "https://git.coding.net/zzyhappyzzy/zzyhappyzzy.git"
