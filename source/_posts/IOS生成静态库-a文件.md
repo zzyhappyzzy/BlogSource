@@ -1,7 +1,7 @@
 ---
 title: IOS生成静态库.a文件
 date: 2016-04-25 11:32:26
-tags: IOS
+tags: iOS
 categories: 学习笔记
 ---
 
@@ -20,8 +20,8 @@ categories: 学习笔记
 4. 随便选择一个模拟器(如iphoen6)，`Command+B`编译完成后就会生成.a文件，该文件是用于模拟器的（Release版本可以不合并），然后选择`Generic IOS Device`，再次编译完成，会生成.a文件，该文件是用于真机的。 他们的路径可以右键.a文件在Finder中查看。
 5. 查看.a文件支持的arm指令集，使用`lipo -inof *.a`,如:
 ```
-lipo -info libGenerateStaticLib.a 
-Architectures in the fat file: libGenerateStaticLib.a are: armv7 arm64 
+lipo -info libGenerateStaticLib.a
+Architectures in the fat file: libGenerateStaticLib.a are: armv7 arm64
 ```
 6. 合并不同架构的.a文件，使用命令`lipoi -create source1.a source2.a -output dest.a`，如：
 ```
@@ -29,8 +29,8 @@ lipo -create Debug-iphoneos/libGenerateStaticLib.a Debug-iphonesimulator/libGene
 ```
 	合并后，可以通过`lipo -info *.a`确认
 ```
-lipo -info libGS.a 
-Architectures in the fat file: libGS.a are: armv7 x86_64 arm64 
+lipo -info libGS.a
+Architectures in the fat file: libGS.a are: armv7 x86_64 arm64
 ```
 	可以看到.a已经合并成功。接着将头文件`TestPublicClass.h`复制出来，.a文件打包就大功告成了。
 iphone设备arm架构表

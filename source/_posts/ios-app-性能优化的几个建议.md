@@ -1,7 +1,7 @@
 ---
 title: ios app 性能优化的几个建议
 date: 2016-04-28 18:14:10
-tags: IOS
+tags: iOS
 categories: Apple
 ---
 ## 参考链接
@@ -24,7 +24,7 @@ categories: Apple
 网络下载的图片，可以先重画为imageview一样大小在显示。因为imageview拉伸或缩小图片代价较大，特别是当imageview嵌套在UIScrollview里的时候。
 #### 选用合适的数据容器。[容器说明](https://developer.apple.com/library/ios/#documentation/cocoa/conceptual/collections/Collections.html)
 ```
-* NSArrayi:有序的。能搞按照索引快速查找元素。按照值查找很慢，插入和删除很慢 
+* NSArrayi:有序的。能搞按照索引快速查找元素。按照值查找很慢，插入和删除很慢
 * NSDictionary:无序的。键值对存储。按照key可以快速查找。
 * NSSet: 无序的。按照值可以快速查找，插入和删除很快。
 ```
@@ -37,13 +37,13 @@ categories: Apple
 #### 考虑图片资源和绘图的代价
 某些效果是切图好还是代码绘制好，需要衡量下
 #### 响应系统发出的内存不足的警告
-如果收到内存不足的通知，需要马上释放缓存及其它可以再次创建的对象。 
+如果收到内存不足的通知，需要马上释放缓存及其它可以再次创建的对象。
 #### 重用一些初始化比较慢的对象
 NSDateFormatter/NSCalendar等，一般可以在你的类中添加一个相应的property即可。
 ```objc
 // in your .h or inside a class extension
 @property (nonatomic, strong) NSDateFormatter *formatter;
- 
+
 // inside the implementation (.m)
 // When you need, just use self.formatter
 - (NSDateFormatter *)formatter {
@@ -85,10 +85,10 @@ self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@
 大部分的开发者会这样写：
 ```objc
 #import <QuartzCore/QuartzCore.h>
- 
+
 // Somewhere later ...
 UIView *view = [[UIView alloc] init];
- 
+
 // Setup the shadow ...
 view.layer.shadowOffset = CGSizeMake(-1.0f, 1.0f);
 view.layer.shadowRadius = 5.0f;
@@ -151,4 +151,3 @@ ios有两种加载图片的方法
 那么，这两种方法有什么区别呢？
 imageName会将加载的图片缓存到内存中，而imageWithContentOfFile仅仅加载图片，不缓存。
 如果加载大图并且调用次数很少，建议用imageWithContentOfFile。小图或者经常调用的图可以用imageName加载。
-

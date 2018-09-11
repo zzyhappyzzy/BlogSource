@@ -1,9 +1,7 @@
 ---
 title: ios10简介
 date: 2016-06-21 14:34:30
-tags: 
-	- IOS
-	- WWDC
+tags: [iOS, WWDC]
 categories: Apple
 ---
 

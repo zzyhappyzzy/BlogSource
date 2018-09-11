@@ -1,7 +1,7 @@
 ---
 title: Swift入门篇
 date: 2016-05-16 14:27:08
-tags: IOS
+tags: iOS
 categories: 学习笔记
 ---
 
@@ -40,14 +40,14 @@ categories: 学习笔记
     dic1["key1"] = 8888.88
     print("shopping arr \(shopping)")
     print("dic1 list is \(dic1)")
-    
+
     //2.空数组和空字典
     var emptyArray = [String]()
     var emptyDictionary = [String:Float]()
     emptyArray.append("111")
     emptyArray.insert("222", atIndex: 1)
     emptyDictionary["salary"] = 112.0
-    
+
     /*
     var shoppingList = []
     var dicList = [:]
@@ -98,7 +98,7 @@ for循环中，`..<`表示小于，`...`表示小于等于。switch语句不在�
         c -= 100;
     }
     print("final c value is \(c)")
-    
+
     //3
     let vegetable = "red pepper"
     switch vegetable {
@@ -111,7 +111,7 @@ for循环中，`..<`表示小于，`...`表示小于等于。switch语句不在�
     default :
         print("Everything tastes good in soup")
     }
-    
+
     //4
     let numbers = [
         "num1":[1,2,3,5,6,4,9,8],
@@ -127,21 +127,21 @@ for循环中，`..<`表示小于，`...`表示小于等于。switch语句不在�
         }
     }
     print("the largest num is \(largestNum)");
-    
+
     //5
     var n = 2
     repeat {
         n = n*2
     }while n < 100
     print("final n is \(n)")
-    
+
     //6 ******  ..<小于   ...小于等于
     var loop1 = 0
     for i in 0..<4 {
         loop1 += i;
     }
     print("loop1 value is \(loop1)")
-    
+
     var loop2 = 0
     for i in 0...4 {
         loop2 += i;
@@ -216,27 +216,27 @@ class Shape {
     var name: String? = nil
     var age: Int
     let extralProperty = 1
-    
+
     //构造函数
     init(name: String){
         self.name = name
         self.age = 12
     }
-    
+
     init(age: Int) {
         self.age = age;
     }
-    
+
     init(name: String, age: Int) {
         self.name = name
         self.age = age
     }
-    
+
     //实例销毁前的cleanup方法
     deinit {
         print("deinit method \(self.name)")
     }
-    
+
     //fucntion
     func shapeDescription() ->String {
         return "the shape side num is \(numberOfSides),name is \(name)"
@@ -248,24 +248,24 @@ class Shape {
 ```swift
 class Squar: Shape {
     var sideLength: Double = 0.0
-    
+
     //property set and get method
     var perimeter: Double {
         get {
             return 4*sideLength
         }
-        
+
         set {
             sideLength = sideLength/2
         }
     }
-    
+
     //enum(支持嵌入方法)
     enum Rank: Int {
         case Ace = 1
         case Two,Three,Four,Five,Six,Seven,Eight
         case Jack,Tom
-        
+
         func simpleDescription() -> String {
             switch self {
             case .Ace: return "ace"
@@ -275,21 +275,21 @@ class Squar: Shape {
             }
         }
     }
-    
+
     //struct
     struct Card {
         var rank: Rank
-        
+
         func simpleDescription() -> String {
             return "The \(rank.simpleDescription())"
         }
     }
-    
+
     init(sideLength: Double, name: String) {
         self.sideLength = sideLength;
         super.init(name: name)
     }
-    
+
     override func shapeDescription() -> String {
         return "override shape description"
     }

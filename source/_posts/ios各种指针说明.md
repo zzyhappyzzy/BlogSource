@@ -1,7 +1,7 @@
 ---
 title: ios各种指针说明
 date: 2016-04-29 14:01:59
-tags: IOS
+tags: iOS
 categories: Apple
 ---
 strong、weak、unsafe_unretained、autoreleasing、copy说明
@@ -15,4 +15,3 @@ strong、weak、unsafe_unretained、autoreleasing、copy说明
 参考链接
 ===
 [Apple](https://developer.apple.com/library/ios/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011226-CH1-SW4)
-

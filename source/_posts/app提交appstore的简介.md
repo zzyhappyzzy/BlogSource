@@ -1,7 +1,7 @@
 ---
-title: app提交appstore的简介
+title: app提交apptore的简介
 date: 2016-04-26 10:38:17
-tags: IOS
+tags: iOS
 categories: Apple
 ---
 
@@ -13,7 +13,7 @@ categories: Apple
 <!-- more -->
 Itunes Connect注意事项
 ===
-1. AppIcon,尺寸1024*1024px,包括Ipad和Iphone 
+1. AppIcon,尺寸1024*1024px,包括Ipad和Iphone
 2. Screenshots,app截图，最多5张，以竖屏为例子
       * Iphone4/4s: 640*960px
       * Iphone5/5s: 640*1136px

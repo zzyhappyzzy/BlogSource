@@ -1,13 +1,11 @@
 ---
 title: 谈谈MVC和MVVM
 date: 2017-02-24 15:42:18
-tags:
-    - MVC
-    - MVVM
+tags: [MVC,MMVM]
 categories: 设计模式
 ---
 
-在IOS开发的过程中，你肯定听说过[MVC](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
+在iOS开发的过程中，你肯定听说过[MVC](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
 下面记录下个人对这种设计模式的理解，顺便谈谈衍生的[MVVM](https://msdn.microsoft.com/en-us/library/hh848246.aspx)设计模式。
 
 <!-- more -->

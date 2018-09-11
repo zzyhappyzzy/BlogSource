@@ -1,7 +1,7 @@
 ---
 title: ios学习资料
 date: 2016-06-28 18:05:25
-tags: ios
+tags: iOS
 categories: Apple
 ---
 

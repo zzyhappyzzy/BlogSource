@@ -1,7 +1,7 @@
 ---
 title: ios设备信息
 date: 2016-06-07 17:46:09
-tags: ios设备
+tags: iOS
 categories: Apple
 ---
 
